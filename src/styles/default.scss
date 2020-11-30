@@ -1,0 +1,149 @@
+@import 'styles/vars';
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    // font-weight: 300;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  //   color: $text-color-dark;
+  //   background: $primary-blue;
+}
+
+#___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+}
+
+#gatsby-focus-wrapper {
+    padding: 4rem;
+    box-sizing: border-box;
+}
+
+.headerWrapper {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .headerContainer {
+        width: 100%;
+        max-width: 960px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: normal;
+        text-transform: uppercase;
+
+        a {
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            color: #000;
+            max-width: 98%;
+            margin: 0 auto;
+            transition: all 300ms;
+        }
+
+        a:hover {
+            color: $darkBlue;
+            max-width: 100%;
+            transition: all 600ms;
+        }
+
+        span {
+            display: inline-block;
+        }
+    }
+
+    nav {
+
+        margin-top: 2rem;
+
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+
+    nav ul li {
+
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: $darkBlue;
+    }
+
+    nav ul li a:hover {
+        color: $lightBlue;
+    }
+
+}
+
+.headerWrapper--small {
+    height: 200px;
+    margin-bottom: 8rem;
+}
+
+.headerWrapper--large {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    margin-top: 8rem;
+}
+
+.contentContainer {
+
+    border-top: 1px solid #eee;
+    padding-top: 8rem;
+    max-width: 960px;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: $lg) {
+
+    .headerWrapper {
+        h1 {
+            font-size: 6rem;
+        }
+
+        nav ul li a {
+            font-size: 2rem;
+        }
+    }
+
+}
