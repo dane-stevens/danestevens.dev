@@ -1,0 +1,19 @@
+@import 'styles/vars';
+
+.readingListProgressContainer {
+    height: 12px;
+    background: #eee;
+    border-radius: 6px;
+
+    position: relative;
+
+    .readingListProgress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: $lightBlue;
+        border-radius: 6px;
+    }
+
+}
