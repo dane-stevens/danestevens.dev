@@ -1,0 +1,58 @@
+---
+title: A simple explanation of the React useState() hook
+description: 
+path: /a-simple-explanation-of-the-react-useState-hook-2020-12-17
+date: 2020-12-17
+---
+
+import PostHeader from 'components/PostHeader'
+
+<PostHeader { ...props } />
+
+## What is state?
+
+State is an object that is managed within your component.
+
+## When to useState?
+
+Use state if you want a component to respond to changes.
+
+## When not to useState?
+
+Don't use state if your component should not respond to changes.
+
+## The useState hook
+
+```jsx
+const [ state, setState ] = useState()
+```
+
+### Let's break it down
+
+The `useState` hook is a function that returns an array with exactly two items. The first item in the array is the current state, while the second item is a function to update the current state.
+
+The React hooks syntax relies heavily on the destructuring pattern. Another way to write this would be:
+
+```jsx
+const stateHook = useState()
+const state = stateHook[0]
+const setState = stateHook[1]
+```
+
+## Complete example
+
+```jsx
+import React, { useState } from 'react'
+
+function () {
+    
+    const [ count, setCount ] = useState(0)
+
+    return (
+        <div>
+            <p>The current count is: { count }</p>
+            <button onClick={() setCount(count + 1)}>+</button>
+        </div>
+    )
+}
+```

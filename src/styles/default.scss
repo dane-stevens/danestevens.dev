@@ -134,6 +134,12 @@ h2 {
     }
 }
 
+.prism-code {
+    padding: 2rem;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
 @media screen and (min-width: $lg) {
 
     .headerWrapper {
@@ -147,3 +153,13 @@ h2 {
     }
 
 }
+
+.gatsby-highlight-code-line {
+    background-color: #feb;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
