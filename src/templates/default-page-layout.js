@@ -12,12 +12,14 @@ export default (props) => {
 
     if (path === '/reading-list/') pageContext.frontmatter = {
         title: 'Reading list',
-        description: `A list of books I have read, or would like to read. I believe in a healthy mix of fiction and non-fiction.`
+        description: `A list of books I have read, or would like to read. I believe in a healthy mix of fiction and non-fiction.`,
+        path
     }
 
     if (path === '/about/') pageContext.frontmatter = {
         title: 'About',
-        description: `Christian, husband, father and software-engineer`
+        description: `Christian, husband, father and software-engineer`,
+        path
     }
 
     return (

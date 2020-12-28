@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-export default function SEO({ title, path, date, description, banner }) {
+export default function SEO({ title, path, description, banner }) {
 
     const data = useStaticQuery(graphql`
         query SiteData {
@@ -15,8 +15,6 @@ export default function SEO({ title, path, date, description, banner }) {
         }
     `)
 
-    console.log(data)
-
     const pageTitle = `${ title } - ${ data.site.siteMetadata.title }`
 
     return (
@@ -28,7 +26,7 @@ export default function SEO({ title, path, date, description, banner }) {
             <meta property='og:image:secure_url' content={ data.site.siteMetadata.siteUrl + (banner ? banner.replace('./','/') : '/danestevens.png')} />
             <meta property='twitter:image:src' content={ data.site.siteMetadata.siteUrl + (banner ? banner.replace('./','/') : '/danestevens.png')} />
             <meta property='og:image:alt' content={ pageTitle } />
-            <meta property='og:url' content={ data.site.siteMetadata.siteUrl + '/blog' + path } />
+            <meta property='og:url' content={ data.site.siteMetadata.siteUrl + (banner ? '/blog' + path : path ? path : '') } />
             <meta name='description' content={ description } />
             <meta name='og:description' content={ description } />
         </Helmet>

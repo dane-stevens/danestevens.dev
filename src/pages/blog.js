@@ -13,7 +13,7 @@ export default function ({ data }) {
 
     return (
 		<>
-			<SEO title="Blog"  />
+			<SEO title="Blog" path='/blog/' />
 			<header className='headerWrapper headerWrapper--small'>
 
 				<div className='headerContainer'>
