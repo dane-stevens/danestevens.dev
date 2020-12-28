@@ -163,3 +163,94 @@ h2 {
     padding-left: 0.75em;
     border-left: 0.25em solid #f99;
   }
+  
+.card {
+    box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+    border-radius: 3px;
+    display: block;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+}
+
+a.card:hover {
+    box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.18), 0 1px 3px 1px rgba(66, 66, 66, 0.26);
+}
+
+.post--card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentContainer {
+    padding-bottom: 2rem;
+}
+
+.card .gatsby-image-wrapper {
+    margin: -2rem -2rem 2rem -2rem;
+    border-radius: 4px 4px 0 0;
+    max-height: 300px;
+}
+
+.contentContainer--blog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contentContainer--post {
+    max-width: 680px;
+    font-size: 18px;
+    color: rgb(41,41,41);
+    letter-spacing: 0.01em;
+    line-height: 26px;
+
+    h1 {
+        line-height: 4.5rem;
+    }
+
+    h2 {
+        line-height: 4rem;
+    }
+}
+
+code {
+    background: #efefef;
+    border-radius: 2px;
+    padding: 0 .3rem;
+}
+
+.prism-code {
+    font-size: 1.3rem;
+}
+
+.prism-code .token-line:last-of-type {
+    height: 0;
+    padding-bottom: -2rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    td {
+        border: 1px solid #ddd;
+    }
+}
+
+blockquote {
+    position: relative;
+    margin: 5rem;
+}
+
+blockquote::before {
+    content: '"';
+    position: absolute;
+    left: -2rem;
+    top: 2rem;
+    font-size: 8rem;
+    color: rgba(0,0,0,0.2);
+    line-height: 0px;
+    font-family: serif;
+    font-weight: bold;
+}

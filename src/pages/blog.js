@@ -4,14 +4,16 @@ import '../styles/default.scss'
 
 import Link from 'components/Link'
 import { graphql } from 'gatsby'
-
+import { DateTime } from "luxon"
+import Img from 'gatsby-image'
+import SEO from 'components/SEO'
 export default function ({ data }) {
 
-    const { allMdx } = data
+	const { allMdx } = data
 
     return (
 		<>
-
+			<SEO title="Blog"  />
 			<header className='headerWrapper headerWrapper--small'>
 
 				<div className='headerContainer'>
@@ -46,10 +48,10 @@ export default function ({ data }) {
 
 			</header>
 
-            <div className='contentContainer'>
+            <div className='contentContainer contentContainer--blog'>
                 {
                     allMdx.edges.map(({ node }) => {
-                        return <Link to={`/blog${ node.frontmatter.path }`}>{ node.frontmatter.title }</Link>
+                        return <Link key={node.id} className='card' to={`/blog${ node.frontmatter.path }`}><Img fluid={ node.frontmatter.banner.childImageSharp.fluid } /><div className='post--card'><div>{ node.frontmatter.title }</div><div>{ DateTime.fromISO(node.frontmatter.date).setZone('UTC').toFormat('DDD') }</div></div></Link>
                     })
                 }
             </div>
@@ -60,7 +62,7 @@ export default function ({ data }) {
 
 export const query = graphql`
     query {
-        allMdx(filter: {slug: {regex: "/^blog/"}}) {
+        allMdx(filter: {slug: {regex: "/^blog/"}} sort: { fields: frontmatter___date, order: DESC }) {
             edges {
                 node {
                     id
@@ -68,6 +70,13 @@ export const query = graphql`
                         title
                         path
                         date
+						banner {
+							childImageSharp {
+								fluid {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
                     }
                 }
             }

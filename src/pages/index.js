@@ -4,10 +4,13 @@ import '../styles/default.scss'
 
 import Link from 'components/Link'
 
+import SEO from 'components/SEO'
+
 export default function () {
 	return (
 		<>
 
+			<SEO title='Home' description='Personal blog of Dane Stevens' />
 			<header className='headerWrapper headerWrapper--large'>
 
 				<div className='headerContainer'>

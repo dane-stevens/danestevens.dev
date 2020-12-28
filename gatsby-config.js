@@ -8,8 +8,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://danestevens.dev',
-    title: 'Dane Stevens',
+    url: 'https://danestevens.dev',
+    title: 'danestevens.dev',
   },
   plugins: [
     {
@@ -20,13 +20,6 @@ module.exports = {
       },
     },
     // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `posts`,
-    //     path: `${__dirname}/src/posts/`,
-    //   },
-    // },
-    // {
     //   resolve: "gatsby-plugin-page-creator",
     //   options: {
     //     path: `${__dirname}/src/posts`,
@@ -36,11 +29,20 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          posts: require.resolve("./src/components/Layout/default-page-layout.js"),
-          default: require.resolve("./src/components/Layout/default-page-layout.js"),
+          // posts: require.resolve("./src/components/Layout/post-page-layout.js"),
+          default: require.resolve("./src/templates/default-page-layout.js"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 680
+            }
+          }
+        ]
       },
     },
+    `gatsby-plugin-mdx-frontmatter`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

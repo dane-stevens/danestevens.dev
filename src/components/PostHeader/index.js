@@ -4,14 +4,14 @@ import { DateTime } from 'luxon'
 
 import './postHeader.scss'
 
-export default function({ pageContext }) {
+export default function(props) {
 
-
+    const { pageContext } = props
 
     return (
         <div className='articleHeader'>
             <h1>{ pageContext.frontmatter.title }</h1>
-            <div className='articleDate'>{ DateTime.fromISO(pageContext.frontmatter.date).toFormat('DDDD') }</div>
+            { pageContext.frontmatter.date && <div className='articleDate'>{ DateTime.fromISO(pageContext.frontmatter.date).setZone('UTC').toFormat('DDDD') }</div> }
         </div>
     )
 }

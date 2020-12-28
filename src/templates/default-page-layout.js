@@ -1,13 +1,28 @@
 import React from 'react'
 
-import '../../styles/default.scss'
+import '../styles/default.scss'
 
 import Link from 'components/Link'
+import PostHeader from 'components/PostHeader'
+import SEO from '../components/SEO'
 
-export default ({ children }) => {
+export default (props) => {
+
+    const { children, pageContext, path } = props
+
+    if (path === '/reading-list/') pageContext.frontmatter = {
+        title: 'Reading list',
+        description: `A list of books I have read, or would like to read. I believe in a healthy mix of fiction and non-fiction.`
+    }
+
+    if (path === '/about/') pageContext.frontmatter = {
+        title: 'About',
+        description: `Christian, husband, father and software-engineer`
+    }
 
     return (
         <>
+            { pageContext.frontmatter && Object.keys(pageContext.frontmatter).length > 0 && <SEO { ...pageContext.frontmatter } /> }
             <header className='headerWrapper headerWrapper--small'>
 
                 <div className='headerContainer'>
@@ -41,8 +56,16 @@ export default ({ children }) => {
                 </div>
 
             </header>
-            <div className='contentContainer'>
-                <section><article>{ children }</article></section>
+            <div className='contentContainer contentContainer--post'>
+                <section>
+                    {
+                        pageContext.frontmatter && Object.keys(pageContext.frontmatter).length > 0 ? (
+                            <article><PostHeader pageContext={ pageContext } />{ children }</article>
+                        ) : (
+                            children
+                        )
+                    }                    
+                </section>
             </div>
         </>
     )
