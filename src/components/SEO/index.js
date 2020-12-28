@@ -29,6 +29,7 @@ export default function SEO({ title, path, description, banner }) {
             <meta property='og:url' content={ data.site.siteMetadata.siteUrl + (banner ? '/blog' + path : path ? path : '') } />
             <meta name='description' content={ description } />
             <meta name='og:description' content={ description } />
+            <meta property='og:type' content='website' />
         </Helmet>
     )
 }
