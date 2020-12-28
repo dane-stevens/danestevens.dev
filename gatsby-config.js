@@ -8,7 +8,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    url: 'https://danestevens.dev',
+    siteUrl: 'https://danestevens.dev',
     title: 'danestevens.dev',
   },
   plugins: [
