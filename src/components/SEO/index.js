@@ -9,7 +9,7 @@ export default function SEO({ title, path, date, description, banner }) {
             site {
                 siteMetadata {
                     title
-                    url
+                    siteUrl
                 }
             }
         }
